@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pre-Site Checklist</title>
+<style>
+  :root {
+    --page:#f9f9f7; --surface:#fcfcfb;
+    --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+    --gridline:#e1e0d9; --border:rgba(11,11,11,0.10);
+    --lead:#2a78d6; --lead-soft:#eaf1fb;
+    --asst:#eb6834; --asst-soft:#fdece3;
+    --go:#0a8a3c; --go-soft:#e6f6ec;
+    --draft:#c98500; --draft-soft:#fff4dc;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--page); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); }
+  .sheet { width:900px; margin:0 auto; background:var(--surface); }
+
+  .banner { background:#15181c; color:#fff; padding:34px 44px 28px; }
+  .banner .eyebrow { font-size:11.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#a9b7c4; margin-bottom:8px; }
+  .banner h1 { font-size:28px; font-weight:800; margin:0 0 6px; display:flex; align-items:center; gap:12px; }
+  .banner p { font-size:13.5px; color:#c7cdd3; margin:0; }
+  .banner .draftpill { display:inline-flex; align-items:center; gap:6px; margin-top:14px; background:rgba(250,178,25,0.16); border:1px solid rgba(250,178,25,0.5); color:#ffcf6b; font-size:11.5px; font-weight:700; padding:5px 12px; border-radius:20px; }
+
+  .content { padding:32px 44px 44px; }
+
+  .role-section { margin-bottom:30px; border-radius:12px; overflow:hidden; border:1px solid var(--border); }
+  .role-head { padding:14px 22px; display:flex; align-items:center; gap:10px; color:#fff; font-size:16px; font-weight:800; }
+  .role-head .emoji { font-size:20px; }
+  .role-head .when { margin-left:auto; font-size:11px; font-weight:700; background:rgba(255,255,255,0.22); padding:4px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.03em; }
+  .role-body { background:#fff; padding:18px 24px 8px; }
+
+  .block { margin-bottom:18px; }
+  .block-head { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .block-head .emoji { font-size:16px; }
+  .block-head .label { font-size:13.5px; font-weight:700; color:var(--ink); }
+  .draft-tag { font-size:9.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; background:var(--draft-soft); color:var(--draft); padding:2px 7px; border-radius:5px; border:1px solid rgba(201,133,0,0.35); }
+
+  ul.check { list-style:none; margin:0; padding:0; }
+  ul.check li { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--ink2); padding:5px 0; border-bottom:1px dashed var(--gridline); }
+  ul.check li:last-child { border-bottom:none; }
+  .box { flex:0 0 auto; width:15px; height:15px; border:1.5px solid #c3c2b7; border-radius:3px; margin-top:1px; }
+
+  .lead .role-head { background:var(--lead); }
+  .lead .block-head .label { color:var(--lead); }
+  .asst .role-head { background:var(--asst); }
+  .asst .block-head .label { color:var(--asst); }
+  .go .role-head { background:var(--go); }
+  .go .block-head .label { color:var(--go); }
+
+  .questions { background:var(--draft-soft); border:1px solid rgba(201,133,0,0.35); border-radius:12px; padding:18px 24px; margin-top:8px; }
+  .questions h2 { font-size:13px; font-weight:800; color:var(--draft); text-transform:uppercase; letter-spacing:0.04em; margin:0 0 10px; display:flex; align-items:center; gap:8px; }
+  .questions ol { margin:0; padding-left:20px; }
+  .questions li { font-size:12.5px; color:#5c4200; margin-bottom:6px; line-height:1.5; }
+
+  .footer-note { text-align:center; font-size:11px; color:var(--muted); margin-top:22px; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="banner">
+    <div class="eyebrow">Redfish · Rose Crest SB</div>
+    <h1>☀️ Pre-Site Checklist</h1>
+    <p>Installation crew — everything Lead &amp; Assistant confirm before leaving for site.</p>
+    <span class="draftpill">⚠ DRAFT v1 — items marked DRAFT still need your review</span>
+  </div>
+
+  <div class="content">
+
+    <div class="role-section lead">
+      <div class="role-head"><span class="emoji">🧑‍🔧</span> LEAD <span class="when">Before leaving</span></div>
+      <div class="role-body">
+
+        <div class="block">
+          <div class="block-head"><span class="emoji">🌅</span><span class="label">7:00 AM Check-in</span></div>
+        </div>
+
+        <div class="block">
+          <div class="block-head"><span class="emoji">📋</span><span class="label">Review Pre-Install Walk Info</span></div>
+          <ul class="check">
+            <li><span class="box"></span>Site access for the day</li>
+            <li><span class="box"></span>Parking</li>
+            <li><span class="box"></span>Electrical</li>
+            <li><span class="box"></span>Any other issues specific to today</li>
+            <li><span class="box"></span>Check with Ops dept for anything else on the daily job</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <div class="block-head"><span class="emoji">🚚</span><span class="label">Daily Vehicle Check-List</span></div>
+          <ul class="check">
+            <li><span class="box"></span>Tires — all four plus the spare</li>
+            <li><span class="box"></span>Leaks — check the ground where it's parked</li>
+            <li><span class="box"></span>Lights — headlights, brake lights, turn signals, hazards</li>
+            <li><span class="box"></span>Fluids — oil, coolant, washer fluid, DEF if diesel</li>
+            <li><span class="box"></span>Load secured — equipment strapped down</li>
+            <li><span class="box"></span>Vision — windshield and mirrors clean, adjusted</li>
+            <li><span class="box"></span>Ready-to-roll — fuel, fire extinguisher, first aid kit, warning triangle</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <div class="block-head"><span class="emoji">🔧</span><span class="label">Lead Equipment Check</span><span class="draft-tag">Draft</span></div>
+          <ul class="check">
+            <li><span class="box"></span>Compressor — Good / Needs Repair</li>
+            <li><span class="box"></span>AeroBarrier / AeroSeal machine — Good / Needs Repair</li>
+            <li><span class="box"></span>Generator (if job requires) — Good / Needs Repair</li>
+            <li><span class="box"></span>Extension cords / power distribution — Good / Needs Repair</li>
+            <li><span class="box"></span>Ladders — Good / Needs Repair</li>
+            <li><span class="box"></span>Hoses &amp; fittings — Good / Needs Repair</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <div class="block-head"><span class="emoji">🦺</span><span class="label">Confirm Assistant Is Ready</span></div>
+          <ul class="check">
+            <li><span class="box"></span>Appropriate setup</li>
+            <li><span class="box"></span>Correct materials packed</li>
+            <li><span class="box"></span>Compressor checked</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <div class="block-head"><span class="emoji">🗒️</span><span class="label">Set the Day's Work Plan</span></div>
+          <ul class="check">
+            <li><span class="box"></span>Number of units to seal</li>
+            <li><span class="box"></span>What's happening at the site today</li>
+            <li><span class="box"></span>Communication plan for the crew</li>
+            <li><span class="box"></span>Confirm job type: AeroBarrier or AeroSeal</li>
+            <li><span class="box"></span>Reminder: take pictures 📸</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="role-section asst">
+      <div class="role-head"><span class="emoji">🙋</span> ASSISTANT <span class="when">Before leaving</span></div>
+      <div class="role-body">
+
+        <div class="block">
+          <div class="block-head"><span class="emoji">📦</span><span class="label">Job Site Supplies</span><span class="draft-tag">Draft</span></div>
+          <ul class="check">
+            <li><span class="box"></span>PPE — gloves, safety glasses, mask/respirator</li>
+            <li><span class="box"></span>Sealant / foam supplies</li>
+            <li><span class="box"></span>Tape &amp; plastic sheeting</li>
+            <li><span class="box"></span>Rags / cleanup supplies</li>
+            <li><span class="box"></span>Water / job-day essentials</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <div class="block-head"><span class="emoji">🔧</span><span class="label">Assistant Equipment Check</span><span class="draft-tag">Draft</span></div>
+          <ul class="check">
+            <li><span class="box"></span>Handheld tools — Good / Needs Repair</li>
+            <li><span class="box"></span>Hoses &amp; nozzles — Good / Needs Repair</li>
+            <li><span class="box"></span>PPE fit check</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="role-section go">
+      <div class="role-head"><span class="emoji">✅</span> BOTH <span class="when">Final go / no-go</span></div>
+      <div class="role-body">
+        <div class="block">
+          <ul class="check">
+            <li><span class="box"></span>Vehicle checklist complete</li>
+            <li><span class="box"></span>Equipment checklist complete — Lead + Assistant</li>
+            <li><span class="box"></span>Today's job info reviewed — address, site contact, access notes</li>
+            <li><span class="box"></span><b>Depart</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="questions">
+      <h2>❓ Open questions before this is final</h2>
+      <ol>
+        <li>Is the Lead / Assistant equipment split above roughly right, or is the real breakdown different?</li>
+        <li>What actually belongs on "Job Site Supplies" — is the guess close, or off?</li>
+        <li>Should "Confirm Assistant Is Ready" be the Lead checking on the Assistant, or the Assistant checking on themselves?</li>
+        <li>Mitchell commented on the Vehicle Check-List asking for this to become an actual Asana Form under Leads — go that route once content is locked?</li>
+      </ol>
+    </div>
+
+    <div class="footer-note">Redfish · Installation Crew Pre-Site Checklist · Draft v1</div>
+  </div>
+</div>
+</body>
+</html>
