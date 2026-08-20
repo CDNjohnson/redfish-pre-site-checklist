@@ -18,46 +18,46 @@
   .sheet { width:900px; margin:0 auto; background:var(--surface); }
 
   .banner { background:#15181c; color:#fff; padding:34px 44px 28px; }
-  .banner .eyebrow { font-size:11.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#a9b7c4; margin-bottom:8px; }
-  .banner h1 { font-size:28px; font-weight:800; margin:0 0 6px; display:flex; align-items:center; gap:12px; }
-  .banner p { font-size:13.5px; color:#c7cdd3; margin:0; }
-  .banner .draftpill { display:inline-flex; align-items:center; gap:6px; margin-top:14px; background:rgba(250,178,25,0.16); border:1px solid rgba(250,178,25,0.5); color:#ffcf6b; font-size:11.5px; font-weight:700; padding:5px 12px; border-radius:20px; }
+  .banner .eyebrow { font-size:14px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#a9b7c4; margin-bottom:8px; }
+  .banner h1 { font-size:36px; font-weight:800; margin:0 0 6px; display:flex; align-items:center; gap:12px; }
+  .banner p { font-size:17px; color:#c7cdd3; margin:0; }
+  .banner .draftpill { display:inline-flex; align-items:center; gap:6px; margin-top:14px; background:rgba(250,178,25,0.16); border:1px solid rgba(250,178,25,0.5); color:#ffcf6b; font-size:14px; font-weight:700; padding:6px 14px; border-radius:20px; }
 
   .content { padding:32px 44px 44px; }
 
   .role-section { margin-bottom:30px; border-radius:12px; overflow:hidden; border:1px solid var(--border); }
-  .role-head { padding:14px 22px; display:flex; align-items:center; gap:10px; color:#fff; font-size:16px; font-weight:800; }
-  .role-head .emoji { font-size:20px; }
-  .role-head .when { margin-left:auto; font-size:11px; font-weight:700; background:rgba(255,255,255,0.22); padding:4px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:0.03em; }
-  .role-body { background:#fff; padding:18px 24px 8px; }
+  .role-head { padding:16px 22px; display:flex; align-items:center; gap:10px; color:#fff; font-size:20px; font-weight:800; }
+  .role-head .emoji { font-size:24px; }
+  .role-head .when { margin-left:auto; font-size:13px; font-weight:700; background:rgba(255,255,255,0.22); padding:5px 12px; border-radius:20px; text-transform:uppercase; letter-spacing:0.03em; }
+  .role-body { background:#fff; padding:20px 24px 10px; }
 
-  .block { margin-bottom:18px; }
-  .block-head { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
-  .block-head .emoji { font-size:16px; }
-  .block-head .label { font-size:13.5px; font-weight:700; color:var(--ink); }
-  .draft-tag { font-size:9.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; background:var(--draft-soft); color:var(--draft); padding:2px 7px; border-radius:5px; border:1px solid rgba(201,133,0,0.35); }
+  .block { margin-bottom:22px; }
+  .block-head { display:flex; align-items:center; gap:8px; margin-bottom:10px; }
+  .block-head .emoji { font-size:19px; }
+  .block-head .label { font-size:17px; font-weight:700; color:var(--ink); }
+  .draft-tag { font-size:11.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; background:var(--draft-soft); color:var(--draft); padding:3px 8px; border-radius:5px; border:1px solid rgba(201,133,0,0.35); }
 
   ul.check { list-style:none; margin:0; padding:0; }
-  ul.check li { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--ink2); padding:5px 0; border-bottom:1px dashed var(--gridline); }
+  ul.check li { display:flex; align-items:flex-start; gap:12px; font-size:16px; color:var(--ink2); padding:8px 0; border-bottom:1px dashed var(--gridline); }
   ul.check li:last-child { border-bottom:none; }
-  .box { flex:0 0 auto; width:15px; height:15px; border:1.5px solid #c3c2b7; border-radius:3px; margin-top:1px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .12s,border-color .12s; user-select:none; }
+  .box { flex:0 0 auto; width:22px; height:22px; border:2px solid #c3c2b7; border-radius:4px; margin-top:1px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .12s,border-color .12s; user-select:none; }
   .box:hover { border-color:var(--go); }
   .box.checked { background:var(--go); border-color:var(--go); }
-  .box.checked::after { content:'✓'; color:#fff; font-size:10px; font-weight:800; line-height:1; }
+  .box.checked::after { content:'✓'; color:#fff; font-size:14px; font-weight:800; line-height:1; }
   ul.check li.done-item { color:var(--muted); text-decoration:line-through; }
 
-  .progress-bar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--border); padding:12px 44px; display:flex; align-items:center; gap:16px; }
-  .progress-bar .track { flex:1; height:8px; background:var(--gridline); border-radius:5px; overflow:hidden; }
+  .progress-bar { position:sticky; top:0; z-index:20; background:#fff; border-bottom:1px solid var(--border); padding:14px 44px; display:flex; align-items:center; gap:16px; }
+  .progress-bar .track { flex:1; height:10px; background:var(--gridline); border-radius:6px; overflow:hidden; }
   .progress-bar .fill { height:100%; width:0%; background:var(--go); transition:width .15s; }
-  .progress-bar .count { font-size:12px; font-weight:700; color:var(--ink2); white-space:nowrap; }
-  .submit-btn { background:var(--gridline); color:var(--muted); border:none; font-size:13px; font-weight:800; padding:10px 20px; border-radius:8px; cursor:not-allowed; white-space:nowrap; transition:background .15s,color .15s; }
+  .progress-bar .count { font-size:15px; font-weight:700; color:var(--ink2); white-space:nowrap; }
+  .submit-btn { background:var(--gridline); color:var(--muted); border:none; font-size:16px; font-weight:800; padding:12px 24px; border-radius:8px; cursor:not-allowed; white-space:nowrap; transition:background .15s,color .15s; }
   .submit-btn.ready { background:var(--go); color:#fff; cursor:pointer; }
 
   .done-screen { display:none; min-height:100vh; align-items:center; justify-content:center; flex-direction:column; text-align:center; padding:60px 40px; }
-  .done-screen .check-badge { width:72px; height:72px; border-radius:50%; background:var(--go-soft); color:var(--go); display:flex; align-items:center; justify-content:center; font-size:36px; margin-bottom:18px; }
-  .done-screen h2 { font-size:22px; margin:0 0 8px; }
-  .done-screen p { font-size:13.5px; color:var(--ink2); margin:0 0 4px; }
-  .done-screen .timestamp { font-size:12px; color:var(--muted); margin-top:10px; }
+  .done-screen .check-badge { width:84px; height:84px; border-radius:50%; background:var(--go-soft); color:var(--go); display:flex; align-items:center; justify-content:center; font-size:42px; margin-bottom:18px; }
+  .done-screen h2 { font-size:28px; margin:0 0 8px; }
+  .done-screen p { font-size:17px; color:var(--ink2); margin:0 0 4px; }
+  .done-screen .timestamp { font-size:14px; color:var(--muted); margin-top:10px; }
   .sheet.submitted .content, .sheet.submitted .progress-bar { display:none; }
   .sheet.submitted .done-screen { display:flex; }
 
@@ -68,12 +68,12 @@
   .go .role-head { background:var(--go); }
   .go .block-head .label { color:var(--go); }
 
-  .questions { background:var(--draft-soft); border:1px solid rgba(201,133,0,0.35); border-radius:12px; padding:18px 24px; margin-top:8px; }
-  .questions h2 { font-size:13px; font-weight:800; color:var(--draft); text-transform:uppercase; letter-spacing:0.04em; margin:0 0 10px; display:flex; align-items:center; gap:8px; }
-  .questions ol { margin:0; padding-left:20px; }
-  .questions li { font-size:12.5px; color:#5c4200; margin-bottom:6px; line-height:1.5; }
+  .questions { background:var(--draft-soft); border:1px solid rgba(201,133,0,0.35); border-radius:12px; padding:20px 24px; margin-top:8px; }
+  .questions h2 { font-size:16px; font-weight:800; color:var(--draft); text-transform:uppercase; letter-spacing:0.04em; margin:0 0 10px; display:flex; align-items:center; gap:8px; }
+  .questions ol { margin:0; padding-left:22px; }
+  .questions li { font-size:15px; color:#5c4200; margin-bottom:8px; line-height:1.55; }
 
-  .footer-note { text-align:center; font-size:11px; color:var(--muted); margin-top:22px; }
+  .footer-note { text-align:center; font-size:13px; color:var(--muted); margin-top:22px; }
 </style>
 </head>
 <body>
