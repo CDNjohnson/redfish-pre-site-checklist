@@ -22,6 +22,11 @@
   .banner h1 { font-size:48px; font-weight:800; margin:0 0 10px; display:flex; align-items:center; gap:14px; }
   .banner p { font-size:22px; color:#c7cdd3; margin:0; line-height:1.4; }
   .banner .draftpill { display:inline-flex; align-items:center; gap:6px; margin-top:16px; background:rgba(250,178,25,0.16); border:1px solid rgba(250,178,25,0.5); color:#ffcf6b; font-size:16px; font-weight:700; padding:8px 16px; border-radius:20px; }
+  .banner .name-row { margin-top:18px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .banner .name-row label { font-size:16px; font-weight:700; color:#c7cdd3; }
+  .banner .name-row input { font-size:18px; padding:10px 14px; border-radius:8px; border:1.5px solid rgba(255,255,255,0.25); background:rgba(255,255,255,0.08); color:#fff; outline:none; min-width:260px; }
+  .banner .name-row input::placeholder { color:#8b95a0; }
+  .banner .name-row input:focus { border-color:#fff; }
 
   .content { padding:36px 48px 48px; }
 
@@ -82,6 +87,10 @@
     <div class="eyebrow">Redfish · Rose Crest SB</div>
     <h1>☀️ Pre-Site Checklist</h1>
     <p>Installation crew — everything Lead &amp; Assistant confirm before leaving for site.</p>
+    <div class="name-row">
+      <label for="crewName">Your name</label>
+      <input type="text" id="crewName" placeholder="e.g. Mitchell Spence" autocomplete="off">
+    </div>
     <span class="draftpill">⚠ DRAFT v1 — items marked DRAFT still need your review</span>
   </div>
 
@@ -93,15 +102,15 @@
 
   <div class="content">
 
-    <div class="role-section lead">
+    <div class="role-section lead" data-role="LEAD — Before leaving">
       <div class="role-head"><span class="emoji">🧑‍🔧</span> LEAD <span class="when">Before leaving</span></div>
       <div class="role-body">
 
-        <div class="block">
+        <div class="block" data-block="7:00 AM Check-in">
           <div class="block-head"><span class="emoji">🌅</span><span class="label">7:00 AM Check-in</span></div>
         </div>
 
-        <div class="block">
+        <div class="block" data-block="Review Pre-Install Walk Info">
           <div class="block-head"><span class="emoji">📋</span><span class="label">Review Pre-Install Walk Info</span></div>
           <ul class="check">
             <li><span class="box"></span>Site access for the day</li>
@@ -112,7 +121,7 @@
           </ul>
         </div>
 
-        <div class="block">
+        <div class="block" data-block="Daily Vehicle Check-List">
           <div class="block-head"><span class="emoji">🚚</span><span class="label">Daily Vehicle Check-List</span></div>
           <ul class="check">
             <li><span class="box"></span>Tires — all four plus the spare</li>
@@ -125,7 +134,7 @@
           </ul>
         </div>
 
-        <div class="block">
+        <div class="block" data-block="Lead Equipment Check">
           <div class="block-head"><span class="emoji">🔧</span><span class="label">Lead Equipment Check</span><span class="draft-tag">Draft</span></div>
           <ul class="check">
             <li><span class="box"></span>Compressor — Good / Needs Repair</li>
@@ -137,7 +146,7 @@
           </ul>
         </div>
 
-        <div class="block">
+        <div class="block" data-block="Confirm Assistant Is Ready">
           <div class="block-head"><span class="emoji">🦺</span><span class="label">Confirm Assistant Is Ready</span></div>
           <ul class="check">
             <li><span class="box"></span>Appropriate setup</li>
@@ -146,7 +155,7 @@
           </ul>
         </div>
 
-        <div class="block">
+        <div class="block" data-block="Set the Day's Work Plan">
           <div class="block-head"><span class="emoji">🗒️</span><span class="label">Set the Day's Work Plan</span></div>
           <ul class="check">
             <li><span class="box"></span>Number of units to seal</li>
@@ -160,11 +169,11 @@
       </div>
     </div>
 
-    <div class="role-section asst">
+    <div class="role-section asst" data-role="ASSISTANT — Before leaving">
       <div class="role-head"><span class="emoji">🙋</span> ASSISTANT <span class="when">Before leaving</span></div>
       <div class="role-body">
 
-        <div class="block">
+        <div class="block" data-block="Job Site Supplies">
           <div class="block-head"><span class="emoji">📦</span><span class="label">Job Site Supplies</span><span class="draft-tag">Draft</span></div>
           <ul class="check">
             <li><span class="box"></span>PPE — gloves, safety glasses, mask/respirator</li>
@@ -175,7 +184,7 @@
           </ul>
         </div>
 
-        <div class="block">
+        <div class="block" data-block="Assistant Equipment Check">
           <div class="block-head"><span class="emoji">🔧</span><span class="label">Assistant Equipment Check</span><span class="draft-tag">Draft</span></div>
           <ul class="check">
             <li><span class="box"></span>Handheld tools — Good / Needs Repair</li>
@@ -187,10 +196,10 @@
       </div>
     </div>
 
-    <div class="role-section go">
+    <div class="role-section go" data-role="BOTH — Final go/no-go">
       <div class="role-head"><span class="emoji">✅</span> BOTH <span class="when">Final go / no-go</span></div>
       <div class="role-body">
-        <div class="block">
+        <div class="block" data-block="Final Go / No-Go">
           <ul class="check">
             <li><span class="box"></span>Vehicle checklist complete</li>
             <li><span class="box"></span>Equipment checklist complete — Lead + Assistant</li>
@@ -223,6 +232,16 @@
 </div>
 
 <script>
+  // ---- Asana logging config -------------------------------------------
+  // Once you deploy the Apps Script web app (see setup notes), paste its
+  // URL below. Until then this stays blank and the page works exactly as
+  // before — checklist + submit screen only, nothing sent anywhere.
+  const CONFIG = {
+    webhookUrl: '',
+    projectGid: '1216826969398950',   // Redfish - Rose Crest SB (master project)
+    sectionGid: '1216826969398959'    // Installation section
+  };
+
   const boxes = Array.from(document.querySelectorAll('.box'));
   const progressCount = document.getElementById('progressCount');
   const progressFill = document.getElementById('progressFill');
@@ -230,12 +249,13 @@
   const sheet = document.querySelector('.sheet');
   const doneScreen = document.getElementById('doneScreen');
   const timestamp = document.getElementById('timestamp');
+  const crewNameInput = document.getElementById('crewName');
 
   function updateProgress() {
     const checked = boxes.filter(b => b.classList.contains('checked')).length;
     progressCount.textContent = checked + ' of ' + boxes.length + ' checked';
     progressFill.style.width = (boxes.length ? (checked / boxes.length * 100) : 0) + '%';
-    const ready = checked === boxes.length;
+    const ready = checked === boxes.length && crewNameInput.value.trim().length > 0;
     submitBtn.disabled = !ready;
     submitBtn.classList.toggle('ready', ready);
   }
@@ -249,11 +269,60 @@
     });
   });
 
+  crewNameInput.addEventListener('input', updateProgress);
+
+  function buildNotes(name, when) {
+    const lines = [];
+    lines.push('Submitted by: ' + name);
+    lines.push('Submitted: ' + when);
+    lines.push('');
+    document.querySelectorAll('.role-section').forEach(sec => {
+      lines.push('— ' + (sec.dataset.role || '').toUpperCase() + ' —');
+      sec.querySelectorAll('.block').forEach(block => {
+        const label = block.dataset.block || '';
+        const items = Array.from(block.querySelectorAll('ul.check li'));
+        if (items.length === 0) {
+          if (label) lines.push('✓ ' + label);
+          return;
+        }
+        const isDraft = !!block.querySelector('.draft-tag');
+        lines.push(label + (isDraft ? ' (DRAFT)' : '') + ':');
+        items.forEach(li => {
+          const box = li.querySelector('.box');
+          const checked = box && box.classList.contains('checked');
+          lines.push('  ' + (checked ? '☑' : '☐') + ' ' + li.textContent.trim());
+        });
+      });
+      lines.push('');
+    });
+    return lines.join('\n');
+  }
+
+  function logToAsana(name, when) {
+    if (!CONFIG.webhookUrl || CONFIG.webhookUrl.indexOf('http') !== 0) return;
+    const notes = buildNotes(name, when);
+    fetch(CONFIG.webhookUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        name: name,
+        timestamp: when,
+        notes: notes,
+        projectGid: CONFIG.projectGid,
+        sectionGid: CONFIG.sectionGid
+      })
+    }).catch(() => { /* best-effort — the on-screen confirmation doesn't depend on this */ });
+  }
+
   submitBtn.addEventListener('click', () => {
     if (submitBtn.disabled) return;
-    timestamp.textContent = 'Submitted ' + new Date().toLocaleString();
+    const name = crewNameInput.value.trim();
+    const when = new Date().toLocaleString();
+    timestamp.textContent = 'Submitted ' + when;
     sheet.classList.add('submitted');
     window.scrollTo(0, 0);
+    logToAsana(name, when);
   });
 
   updateProgress();
