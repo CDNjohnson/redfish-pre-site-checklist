@@ -165,8 +165,12 @@
   // before — checklist + submit screen only, nothing sent anywhere.
   const CONFIG = {
     webhookUrl: 'https://script.google.com/macros/s/AKfycbxpqLyOQRds3Qgkmzed4dgE3U-HcsOoA5Y4oXsW8BD_vLzG-2ojxf6Xm3t_Q8acTeU/exec',
-    projectGid: '1216309461935995',   // Installation OPS SB
-    sectionGid: '1217790213246591'    // Pre-morning checklist section
+    // Multi-homed: every submission creates ONE task that lives in both
+    // projects at once (Asana calls this "multi-homing").
+    destinations: [
+      { projectGid: '1216309461935995', sectionGid: '1217790213246591' }, // Installation OPS SB -> Pre-morning checklist
+      { projectGid: '1216826969398950', sectionGid: '1216826969398959' }  // Redfish - Rose Crest SB -> Installation
+    ]
   };
 
   const boxes = Array.from(document.querySelectorAll('.box'));
@@ -236,8 +240,7 @@
         name: name,
         timestamp: when,
         notes: notes,
-        projectGid: CONFIG.projectGid,
-        sectionGid: CONFIG.sectionGid
+        destinations: CONFIG.destinations
       })
     }).catch(() => { /* best-effort — the on-screen confirmation doesn't depend on this */ });
   }
